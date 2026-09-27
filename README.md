@@ -9,6 +9,10 @@
 
 Built with native GTK 3 / Adwaita and styled with AWS colorways, it offers full security for sensitive keys by integrating directly with your **Linux system password**.
 
+<p align="center">
+  <img src="assets/showcase-hero.jpg" alt="AWS Profile Manager Showcase" width="100%" />
+</p>
+
 ---
 
 ## ✨ Features
