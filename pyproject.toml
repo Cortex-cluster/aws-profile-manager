@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-profile-manager"
+version = "1.0.0"
+description = "Native Linux Desktop GUI to manage, test, and protect AWS CLI account profiles"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Pawan Pratap", email = "cluster.cortex@gmail.com" }
+]
+keywords = ["aws", "profile", "credentials", "cloud", "iam", "sts", "gtk3", "desktop"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Environment :: X11 Applications :: GTK",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities"
+]
+
+[project.scripts]
+aws-profile-manager = "aws_profile_manager.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

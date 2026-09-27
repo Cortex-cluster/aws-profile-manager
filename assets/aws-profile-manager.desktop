@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AWS Profile Manager
+GenericName=AWS Account Manager
+Comment=Manage, rename, delete, test, and protect AWS CLI accounts and credentials
+Exec=aws-profile-manager
+Icon=aws-profile-manager
+Terminal=false
+Categories=Development;Settings;Utility;
+Keywords=aws;profile;credentials;cloud;amazon;iam;sts;security;
+StartupNotify=true
+StartupWMClass=aws-profile-manager

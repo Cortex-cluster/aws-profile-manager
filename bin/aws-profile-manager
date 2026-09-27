@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# AWS Profile Manager executable launcher
+
+# If running from source directory
+SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [ -d "$SOURCE_DIR/src/aws_profile_manager" ]; then
+    export PYTHONPATH="$SOURCE_DIR/src:$PYTHONPATH"
+    exec /usr/bin/python3 "$SOURCE_DIR/src/aws_profile_manager/main.py" "$@"
+fi
+
+# If installed in standard system location
+if [ -f "/usr/share/aws-profile-manager/src/aws_profile_manager/main.py" ]; then
+    export PYTHONPATH="/usr/share/aws-profile-manager/src:$PYTHONPATH"
+    exec /usr/bin/python3 "/usr/share/aws-profile-manager/src/aws_profile_manager/main.py" "$@"
+fi
+
+# Fallback to local user share
+if [ -f "$HOME/.local/share/aws-profile-manager/src/aws_profile_manager/main.py" ]; then
+    export PYTHONPATH="$HOME/.local/share/aws-profile-manager/src:$PYTHONPATH"
+    exec /usr/bin/python3 "$HOME/.local/share/aws-profile-manager/src/aws_profile_manager/main.py" "$@"
+fi
+
+echo "Error: AWS Profile Manager source files could not be located." >&2
+exit 1
